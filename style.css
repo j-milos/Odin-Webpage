@@ -22,7 +22,15 @@ li {
 .navbar{
     display: flex;
     justify-content: space-between;
-    gap:20px;
+    gap:40px;
+    padding: 10px;
+}
+
+@media (max-width:768px){
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .navbar ul{
@@ -61,12 +69,30 @@ li {
 .one-text   {grid-area: tex;}
 .one-img    {grid-area: image;}
 
+@media (max-width:768px){
+    .one{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "tex"
+        "image"
+    }
+}
 
 .one-text{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap:10px
+    justify-content: flex-start;
+    gap:20px;
+    padding: 10px;
+    
+}
+
+@media (max-width:768px){
+    .one-text{
+        align-items: center;
+        text-align: center;
+        gap:60px;
+    }
 }
 .one-text h1{
     font-size: 48px;
@@ -79,7 +105,11 @@ li {
     color:#e5e7eb;
 }
 
-
+.one-img{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
 .one-img img{
         width: 100%;
         height: 100%;
@@ -88,11 +118,17 @@ li {
         border:3px solid #3882f6 ;
 }
 /* Zapamti ovo/Slika u div pa onda ovo gore,prve tri stavke */
-
+@media (max-width:768px){
+    .one-img img{
+        max-width: 400px;
+        max-height: 200px;
+    }
+}
 /* two */
 .two{
     display: grid;
     gap: 10px;
+    padding: 12vh 10px 12vh 10px;
     grid-template-areas: 
     "header header header header"
     "logoone logotwo logothree logofour";
@@ -103,6 +139,25 @@ li {
 .logos-3      {grid-area: logothree;}
 .logos-4      {grid-area: logofour;}
 
+@media (max-width:768px){
+    .two{
+        grid-template-areas: 
+        "header header"
+        "logoone logotwo"
+        "logothree logofour";
+    }
+}
+
+@media (max-width:425px){
+    .two{
+        grid-template-areas: 
+        "header"
+        "logoone"
+        "logotwo"
+        "logothree"
+        "logofour";
+    }
+}
 .two img{
     border:3px solid #3882f6 ;
     border-radius: 8px;
@@ -116,7 +171,6 @@ li {
 .two-header{
     display: flex;
     justify-content: center;
-    margin: 30px 0 0 0;
     font-size: 36px;
     font-weight: 900;
     color: #1f2937;
@@ -160,7 +214,12 @@ li {
     gap: 10px;
     padding: 50px 0 50px 0;
 }
-
+@media (max-width:428px){
+    .three{
+        padding: 50px;
+        gap:30px
+    }
+}
 .three p{
     display: flex;
     justify-content:center;
@@ -176,6 +235,13 @@ li {
     font-size: 24px;
     font-weight: bold;
     color:#1f2937;
+    padding-right: 20px;
+}
+
+@media (max-width:428px){
+    .three h5{
+        justify-content: center;
+    }
 }
 
 /* Four */
@@ -188,7 +254,17 @@ li {
     background-color:#3882f6 ;
     border-radius: 5px;
     color:#e5e7eb;
+    gap:40px;
     padding: 30px;
+}
+
+@media (max-width:428px){
+    .four{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 }
 .four a{
     display: flex;
@@ -200,6 +276,9 @@ li {
     font-size: 17px;
     font-weight: bold;
     color:white ;
+}
+.four p{
+    padding-top: 10px;
 }
 
 
